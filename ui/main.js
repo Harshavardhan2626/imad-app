@@ -1,2 +1,2 @@
 console.log('Loaded!');
-alert("The doom of valeria")
+alert("The doom of valeria");
