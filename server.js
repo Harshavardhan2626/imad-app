@@ -74,7 +74,8 @@ return template;
 app.get('/:articleName', function (req, res)
 {
    var articleName=req.params.articleName;
-  res.send(createTemplate(articles[articleName]));
+   //this is a feature provided by express way packge impoprted at the begening
+    res.send(createTemplate(articles[articleName]));
 }
 );
 
