@@ -9,13 +9,28 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-
-var article_one={
+var articles={
+'article-one':{
     title:"Article one|Harsha",
     heading:"Article one",
     date:"2nd september 2017",
     content:" Chaos is a Ladder.So better climb it or bear the burden of supporting it!"
     
+},
+'article-two':{
+    title:"Article Two|Harsha",
+    heading:"Article two",
+    date:"2nd september 2017",
+    content:" This is the content for artocle 2!"
+    
+},
+'article-three':{
+title:"Article one|Harsha",
+heading:"Article one",
+date:"2nd september 2017",
+content:" This is the content forr article three"
+
+}
 };
 
 function createTemplate(data)
@@ -56,17 +71,14 @@ return template;
 }
     
     
-app.get('/article-one', function (req, res) {
-  res.send(createTemplate(article_one));
-});
+app.get('/:articleName', function (req, res)
+{
+   var articleName=req.params.articleName;
+  res.send(createTemplate(articles[articleName]));
+}
+);
 
-app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
 
-app.get('/article-three', function (req, res) {
- res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
 
 
 
