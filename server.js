@@ -52,6 +52,7 @@ var template=`<html>
             
 </html>
 `;
+return template;
 }
     
     
