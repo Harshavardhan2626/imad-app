@@ -9,8 +9,54 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+
+var article_one={
+    title:"Article one|Harsha",
+    heading:"Article one",
+    date:"2nd september 2017",
+    content:" Chaos is a Ladder.So better climb it or bear the burden of supporting it!"
+    
+};
+
+function createTemplate(data)
+{
+    var title=data.title;
+    var heading=data.heading;
+    var content=data.content;
+    var date=data.date;
+
+var template=`<html>
+    <head>
+        <title>${title} </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    
+    <body>
+        <div class="container">
+        <div>
+            <a href="/">Home</a>
+            
+            
+        </div>
+        <hr/>
+        <h3>${heading}</h3>
+        <div>${date}</div>
+        <div>
+            <p>
+                ${content}
+            </p>
+        </div>
+        </div>
+    </body>
+            
+</html>
+`;
+}
+    
+    
 app.get('/article-one', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+  res.send(createTemplate(article_one));
 });
 
 app.get('/article-two', function (req, res) {
