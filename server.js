@@ -78,6 +78,15 @@ var template=`<html>
 return template;
 }
     
+    var names=[];
+    app.get('/submit-name/:name',function(req,res)
+    {
+        var name=req.params.name;
+        names.push(name);
+        
+        res.send(JSON.stringify(names));
+        
+    });
     
 app.get('/:articleName', function (req, res)
 {
