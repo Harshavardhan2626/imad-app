@@ -1,16 +1,8 @@
-console.log('Loaded!');
-alert("The doom of valeria");
-var element=document.getElementById("main-text");
-element.innerHTML="Harsha is so cool";
-
-var img=document.getElementById("image");
-marginleft=0;
-function moveright()
+var button=document.getElementById('counter');
+counter=0;
+button.onclick=function()
 {
-    marginleft=marginleft+10;
-    img.style.marginLeft=marginleft+'px';
-}
-img.onclick=function ()
-{
-    var interval=setInterval(moveright,50);
+    counter=counter+1;
+    var span=document.getElemnentById('count');
+    span.innerHTML(counter.toString());
 };
