@@ -29,6 +29,6 @@ submit.onclick=function(){
     list+='<li>'+names[i]+'</li'>;    
     }
     var ul=document.getElementById('names-ul');
-    ul.innerHMTL=list;
+    ul.innerHTML=list;
 };
 }
