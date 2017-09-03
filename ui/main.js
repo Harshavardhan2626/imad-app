@@ -18,3 +18,17 @@ button.onclick=function()
     request.open('GET','http://harsh2626.imad.hasura-app.io/counter',true);
     request.send(null);
         };
+var nameinput=document.getElementById('name');
+var name=nameinput.value;
+var submit=document.getElementById('submit_btn');
+submit.onclick=function(){
+    var names=["harsha","Musk","whiteshadow"];
+    var list='';
+    for(i=0;i<names.length;i++)
+        {
+    list+='<li>'+names[i]+'</li'>;    
+    }
+    var ul=document.getElementById('names-ul');
+    ul.innerHMTL=list;
+};
+}
